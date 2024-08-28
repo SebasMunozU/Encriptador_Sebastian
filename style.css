@@ -1,0 +1,91 @@
+*{
+    background: #EAE4DD;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 150%;
+    
+}
+
+.logo{
+    padding-top: 10px;
+    margin-left: 10px;
+    width: 8%;
+}
+
+main{
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 80px;
+}
+
+.text-area{
+    border: none;
+    color:  #ff9100; 
+    margin-top: 90px;
+    text-transform: lowercase;
+}
+
+::placeholder { color: #ff9100; }
+    .textarea :focus{
+        outline: none;
+    }
+
+.mensaje{
+    background: #c9bb76;
+  
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 24px;
+    color: #00712D;
+    margin-left: 90px;
+    margin-top: 30px;
+    padding-left: 20px;
+    position: fixed;
+    background-size: 100%;
+}
+
+.mensaje:focus{
+    outline: none;
+}
+
+.botones{
+    display: flex;
+    margin-top: 18px;
+}
+
+.btm-encriptar {
+background-color: #00712D;
+border: 1px solid #D5ED;
+border-radius: 25px;
+color: #FFFBE6;
+cursor: pointer;
+height: 67px;
+width: 328px;
+}
+
+.btm-desencriptar {
+    background-color: #00712D;
+    border: 1px solid #D5ED;
+    border-radius: 25px;
+    color: #FFFBE6;
+    cursor: pointer;
+    height: 67px;
+    width: 328px;
+    }
+
+.copiarTexto {
+    background-color: #00712D;
+    border-radius: 25px; 
+    color: #FFFBE6; 
+    cursor: pointer;
+    height: 67px; 
+    width: 328px; 
+    margin-left: 10px; 
+    border: 1px solid #D5ED; 
+    }
+    
+.informacion{
+     color: #ff9100;
+    font-size: 25px;
+    }

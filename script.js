@@ -1,0 +1,76 @@
+const textarea = document.querySelector(".text-area");
+const mensaje = document.querySelector(".mensaje");
+
+// La letra "e" es convertida para "enter"
+// La letra "i" es convertida para "imes"
+// La letra "a" es convertida para "ai"
+// La letra "o" es convertida para "ober"
+// La letra "u" es convertida para "ufat"
+
+
+function btnEncriptar() {
+    const textoEncriptado = encriptar(textarea.value)
+    mensaje.value = textoEncriptado
+    textarea.value = "";
+    mensaje.Style.backgroundImage = "none" 
+}
+
+function encriptar(stringEncriptado){
+    let matrizCodigo = [
+        ["e", "enter"],
+        ["i", "imes"],
+        ["a", "ai"],
+        ["o", "ober"],
+        ["u", "ufat"]
+    ];
+    stringEncriptado = stringEncriptado.toLowerCase()
+    for (let i = 0; i < matrizCodigo.length; i++) {
+        if (stringEncriptado.includes(matrizCodigo[i][0])) {
+            stringEncriptado = stringEncriptado.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1]);
+            
+        }
+        console.log(matrizCodigo[i][0])
+
+    }
+    console.log(stringEncriptado)
+    return stringEncriptado
+
+}
+
+function btnDesencriptar(){
+    const textoEncriptado = desencriptar(textarea.value)
+    mensaje.value = textoEncriptado
+    textarea.value = "";
+
+}
+
+function desencriptar(stringDesencriptado){
+    let matrizCodigo = [
+        ["e", "enter"],
+        ["i", "imes"],
+        ["a", "ai"],
+        ["o", "ober"],
+        ["u", "ufat"]
+    ];
+    stringDesencriptado = stringDesencriptado.toLowerCase()
+
+    for (let i = 0; i <matrizCodigo.length; i++){
+    if(stringDesencriptado.includes(matrizCodigo[i][1])){
+        stringDesencriptado = stringDesencriptado.replaceAll(matrizCodigo[i][1], matrizCodigo[i][0])
+        }
+
+     }
+    return stringDesencriptado;
+}
+
+function copiarTexto() {
+    // Selecciona el texto encriptado
+    mensaje.select();
+    mensaje.setSelectionRange(0, 99999); // Para dispositivos móviles
+    
+    // Copia el texto al portapapeles
+    document.execCommand("copy");
+    
+    // Muestra una alerta como confirmación
+    alert("Texto copiado: " + mensaje.value);
+}
